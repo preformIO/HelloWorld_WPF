@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld_WPF"
         mc:Ignorable="d"
-        Title="HelloWrld_WPF" Height="230" Width="480">
+        Title="HelloWrld_WPF" Height="640" Width="480">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -17,12 +17,22 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0">Words</Label>
+        <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" FontSize="14">Words</Label>
         <ListBox Grid.Row="1" x:Name="lstWords" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FFC4FDFF" />
 
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
             <TextBox x:Name="txtWord" />
             <Button x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddWord_Click">Add Word</Button>
+            <TreeView Margin="10,10,0,13" Name="TreeView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200">
+                <TreeViewItem Header="first item">
+                    <TreeViewItem Header="first item first child" />
+                    <TreeViewItem Header="first item second child" />
+                    <TreeViewItem Header="first item third child" />
+                </TreeViewItem>
+            </TreeView>
+
+            <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
+            <TextBox x:Name="txtEditor" />
 
         </StackPanel>
         
