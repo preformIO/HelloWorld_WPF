@@ -24,5 +24,15 @@ namespace HelloWorld_WPF
         {
             InitializeComponent();
         }
+
+        private void ButtonAddWord_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtWord.Text) && !lstWords.Items.Contains(txtWord.Text))
+            {
+                lstWords.Items.Add(txtWord.Text);
+                txtWord.Clear();
+            }
+
+        }
     }
 }

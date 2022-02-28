@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="HelloWrld_WPF" Height="230" Width="480">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0">Words</Label>
+        <ListBox Grid.Row="1" x:Name="lstWords" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FFC4FDFF" />
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
+            <TextBox x:Name="txtWord" />
+            <Button x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddWord_Click">Add Word</Button>
+
+        </StackPanel>
+        
     </Grid>
 </Window>
